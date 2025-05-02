@@ -58,7 +58,11 @@ py -m venv kronos
 ``` shell
 git clone https://github.com/mahmoodlab/KRONOS.git
 pip install -e ./KRONOS
+
+# run following command to install packages required for running the tutorials
+pip install -r requirements.txt
 ```
+
 
 ### Step 3. Load THREADS with pretrained weights
 ```python
