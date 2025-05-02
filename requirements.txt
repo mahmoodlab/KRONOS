@@ -1,9 +1,13 @@
-pandas
+# packages required for the code in tutorials
 h5py
-matplotlib
-scikit-image
-scikit-learn
-huggingface_hub
+numpy
+scipy
 optuna
+pandas
+tifffile
+matplotlib
+scikit_learn
+scikit-image
 jupyter
 ipywidgets
+huggingface_hub
