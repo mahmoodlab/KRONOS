@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "KRONOS"
+version = "0.1.0"
+description = "Foundation model for multiplex spatial proteomic images"
+readme = "README.md"
+requires-python = ">=3.10.0"
+authors = [
+    { name = "Muhammad Shaban", email = "mshaban@bwh.harvard.edu" },
+    { name = "Faisal Mahmood", email = "faisalmahmood@bwh.harvard.edu" }
+]
+maintainers = [
+    { name = "" }
+]
+license = { text = "CC-BY-NC-ND-4.0" }
+keywords = ["foundation model", "multiplex", "spatial proteomics", "self-supervised", "pytorch", "transformers", "pathology"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)",
+    "Operating System :: OS Independent"
+]
+
+dependencies = [
+    "numpy>=1.26.4",
+    "torch>=2.0.0",
+    "xformers>=0.0.18",
+    "setuptools>=76.1.0",
+    "huggingface_hub>=0.28.1"
+]
+
+[project.urls]
+Homepage = "https://github.com/mahmoodlab/KRONOS/"
+Download = "https://github.com/mahmoodlab/KRONOS.git"
+
+[tool.setuptools]
+packages = ["kronos"]  # Adjust if needed
+
+[tool.setuptools.package-data]
+KRONOS = ["*.txt", "*.md"]
+

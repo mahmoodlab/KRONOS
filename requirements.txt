@@ -1,0 +1,9 @@
+pandas
+h5py
+matplotlib
+scikit-image
+scikit-learn
+huggingface_hub
+optuna
+jupyter
+ipywidgets
