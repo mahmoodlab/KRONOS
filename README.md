@@ -1,4 +1,4 @@
-KRONOS <img src="docs/kronos_1.png" width="100px" align="right"/>
+KRONOS <img src="docs/kronos_1.jpg" width="100px" align="right"/>
 ===========
 ## Foundation Model for Multiplexed Spatial Proteomic Images
 [[`Model`](https://huggingface.co/MahmoodLab/kronos)] |  [[`Paper`](#[reference])] |  [[`Cite`](#reference)]
@@ -79,6 +79,7 @@ print("Model embedding dimension: ", embedding_dim)
 ### Step 4. Process a multiplex images
 Here we provide an example of how to process a batch of dummy multiplex images with 10 markers.
 ```python
+import torch
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model.to(device)
 
@@ -107,8 +108,8 @@ with torch.no_grad():
     patch_features, patch_marker_features, patch_token_features = model(batch, marker_ids=marker_ids)
 
 print(f'Patch features: {patch_features.shape}')
-print(f'Marker features: {marker_features.shape}')
-print(f'Token features: {token_features.shape}')
+print(f'Marker features: {patch_marker_features.shape}')
+print(f'Token features: {patch_token_features.shape}')
 ```
 You can now save the patch/marker/token features to a npy or h5 file to use for downstream tasks.
 
@@ -137,4 +138,4 @@ The project was built on top of [dinov2](https://github.com/facebookresearch/din
 If you have questions, comments, or concerns, feel free to email Faisal Mahmood (`faisalmahmood@bwh.harvard.edu`) or Muhammad Shaban (`mshaban@bwh.harvard.edu`). All requests and questions will be answered in a timely manner. Immediate responses may not be available.
 
 
-<img src=docs/joint_logo.jpg>
+<img src=docs/joint_logo_1.jpg>
