@@ -358,6 +358,8 @@ class DinoVisionTransformer(nn.Module):
         }
 
     def forward(self, x, masks=None, marker_ids=None, is_training=False):
+        if marker_ids is None:
+            marker_ids = [torch.tensor([i+4 for i in range(x.shape[1])], device=x.device) for _ in range(x.shape[0])]
         ret = self.forward_features(x, masks, marker_ids)
         if is_training:
             return ret

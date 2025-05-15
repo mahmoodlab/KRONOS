@@ -25,10 +25,6 @@ if __name__ == "__main__":
     # generating a batch with random values
     batch = torch.randn(batch_size, marker_count, patch_size, patch_size, dtype=precision).to(device)
 
-    # generating dummy marker ids which are required to differentiate different markers (see marker_meta.csv for actual marker id for each marker)
-    marker_ids = [torch.tensor([i for i in range(marker_count)], device=device) for _ in range(batch_size)]
-
-
     # generating dummy mean and std values for normalization (see marker_meta.csv for actual mean and std values for each marker ids)
     mean = torch.randn(marker_count, dtype=precision).to(device)
     std = torch.randn(marker_count, dtype=precision).to(device)
@@ -38,9 +34,9 @@ if __name__ == "__main__":
 
     # feature extraction
     with torch.no_grad():
-        patch_features, marker_features, token_features = model(batch, marker_ids=marker_ids)
+        patch_embeddings, marker_embeddings, token_embeddings = model(batch)
     
-    print(f'Patch features: {patch_features.shape}')
-    print(f'Marker features: {marker_features.shape}')
-    print(f'Token features: {token_features.shape}')
+    print(f'Patch embeddings: {patch_embeddings.shape}')
+    print(f'Marker embeddings: {marker_embeddings.shape}')
+    print(f'Token embeddings: {token_embeddings.shape}')
 

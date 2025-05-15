@@ -90,11 +90,6 @@ patch_size = 224
 # generating a dummy batch with random values
 batch = torch.randn(batch_size, marker_count, patch_size, patch_size).to(device)
 
-# generating dummy marker ids which are required to differentiate different input markers 
-# see marker_metadata.csv for actual marker id for each marker
-marker_ids = [torch.tensor([i for i in range(marker_count)], device=device) for _ in range(batch_size)]
-
-
 # generating dummy mean and std values for normalization
 # see marker_metadata.csv for actual mean and std values for each marker ids
 mean = torch.randn(marker_count).to(device)
@@ -105,11 +100,11 @@ batch = (batch - mean[None, :, None, None]) / std[None, :, None, None]
 
 # feature extraction
 with torch.no_grad():
-    patch_features, patch_marker_features, patch_token_features = model(batch, marker_ids=marker_ids)
+    patch_embeddings, marker_embeddings, token_embeddings = model(batch)
 
-print(f'Patch features: {patch_features.shape}')
-print(f'Marker features: {patch_marker_features.shape}')
-print(f'Token features: {patch_token_features.shape}')
+print(f'Patch embeddings: {patch_embeddings.shape}')
+print(f'Marker embeddings: {marker_embeddings.shape}')
+print(f'Token embeddings: {token_embeddings.shape}')
 ```
 You can now save the patch/marker/token features to a npy or h5 file to use for downstream tasks.
 

@@ -134,7 +134,6 @@ class CellPhenotypingDataset(Dataset):
         # Return the patch markers, marker IDs, cell mask, and patch name
         return patch_markers, marker_ids, cell_mask, patch_name
 
-
 class CellPhenotypingFeatures(Dataset):
     """
     A PyTorch Dataset class for loading pre-extracted features and their associated labels.
