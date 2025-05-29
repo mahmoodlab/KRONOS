@@ -64,7 +64,7 @@ pip install -r requirements.txt
 ```
 
 
-### Step 3. Load THREADS with pretrained weights
+### Step 3. Load KRONOS with pretrained weights
 ```python
 from kronos import create_model, create_model_from_pretrained
 model, precision, embedding_dim = create_model_from_pretrained(
