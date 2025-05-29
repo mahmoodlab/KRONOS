@@ -6,7 +6,7 @@ KRONOS <img src="docs/kronos_1.jpg" width="100px" align="right"/>
 KRONOS is a foundation model for encoding multiplex spatial proteomic images. Trained on a large dataset containing over 47 million patches, KRONOS captures spatial expression patterns of different proteins within multiplex images.
 
 ### Why use KRONOS?
-KRONOS is designed to encode spatial expression patterns of different proteins in a given multiplex image. This makes KRONOS suitable for transfer learning to a wide range of tasks, for (1) cell phenotyping, (2) region classification, (3) artifact detection, (4) unsupervised tissue tissue phenotyping, and patient stratification. 
+KRONOS is designed to encode spatial expression patterns of different proteins in a given multiplex image. This makes KRONOS suitable for transfer learning to a wide range of tasks, for (1) cell phenotyping, (2) region classification, (3) artifact detection, (4) unsupervised tissue tissue phenotyping, and (5) patient stratification. 
 
 ### What is the purpose of this repository?
 This repository provides tools to extract pretrained embeddings from multiplex image patches using KRONOS model.
