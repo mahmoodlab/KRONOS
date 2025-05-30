@@ -1,43 +1,51 @@
-[build-system]
-requires = ["setuptools>=64", "wheel"]
-build-backend = "setuptools.build_meta"
-
-[project]
+[tool.poetry]
 name = "KRONOS"
 version = "0.1.0"
 description = "Foundation model for multiplex spatial proteomic images"
 readme = "README.md"
-requires-python = ">=3.10.0"
 authors = [
-    { name = "Muhammad Shaban", email = "mshaban@bwh.harvard.edu" },
-    { name = "Faisal Mahmood", email = "faisalmahmood@bwh.harvard.edu" }
+    "Muhammad Shaban <mshaban@bwh.harvard.edu>",
+    "Faisal Mahmood <faisalmahmood@bwh.harvard.edu>"
 ]
-maintainers = [
-    { name = "" }
-]
-license = { text = "CC-BY-NC-ND-4.0" }
+license = "CC-BY-NC-ND-4.0"
 keywords = ["foundation model", "multiplex", "spatial proteomics", "self-supervised", "pytorch", "transformers", "pathology"]
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)",
-    "Operating System :: OS Independent"
+homepage = "https://github.com/mahmoodlab/KRONOS/"
+repository = "https://github.com/mahmoodlab/KRONOS"
+packages = [{ include = "kronos" }]
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+numpy = ">=1.26.4"
+torch = ">=2.0.0"
+xformers = ">=0.0.18"
+huggingface_hub = ">=0.28.1"
+
+# Optional dependencies for tutorials
+jupyter = { version = "*", optional = true }
+ipywidgets = { version = "*", optional = true }
+pandas = { version = "*", optional = true }
+h5py = { version = "*", optional = true }
+scipy = { version = "*", optional = true }
+tifffile = { version = "*", optional = true }
+matplotlib = { version = "*", optional = true }
+scikit-learn = { version = "*", optional = true }
+scikit-image = { version = "*", optional = true }
+optuna = { version = "*", optional = true }
+
+[tool.poetry.extras]
+tutorials = [
+    "jupyter",
+    "ipywidgets",
+    "pandas",
+    "h5py",
+    "scipy",
+    "tifffile",
+    "matplotlib",
+    "scikit-learn",
+    "scikit-image",
+    "optuna"
 ]
 
-dependencies = [
-    "numpy>=1.26.4",
-    "torch>=2.0.0",
-    "xformers>=0.0.18",
-    "setuptools>=76.1.0",
-    "huggingface_hub>=0.28.1"
-]
-
-[project.urls]
-Homepage = "https://github.com/mahmoodlab/KRONOS/"
-Download = "https://github.com/mahmoodlab/KRONOS.git"
-
-[tool.setuptools]
-packages = ["kronos"]  # Adjust if needed
-
-[tool.setuptools.package-data]
-KRONOS = ["*.txt", "*.md"]
-
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,7 +1,6 @@
-# add summary of the code
 """
-This script downloads the CRC dataset, prepares multi-channel TIFF images, copies cell mask files,
-and extracts cell annotations. It includes functions to handle downloading, file management, and data processing.
+This script downloads the CRC dataset (MAPS, Shaban et al.), prepares multi-channel TIFF images, copies cell mask files,
+and extracts cell annotations.
 """
 
 import os
@@ -13,10 +12,13 @@ import shutil
 import requests
 
 
-def download_dataset(project_dir):
+def download_crc_maps_shaban_dataset(project_dir):
     """
-    Downloads the CRC dataset from the specified URL and saves it to the project directory.
-    Shows download progress.
+    Downloads CRC dataset (MAPS, Shaban et al.) from Zenodo and saves it to the project dir.
+    
+    Paper: Pathologist-level Cell Type Annotation from Tissue Images through Machine Learning (Shaban et al., Nat. Comms.)
+    Link: https://zenodo.org/records/10067010
+
     """
     url = "https://zenodo.org/records/10067010/files/cHL_CODEX.zip?"
     dataset_zip_path = os.path.join(project_dir, "dataset", "cHL_CODEX.zip")
@@ -45,13 +47,14 @@ def download_dataset(project_dir):
             return
         os.system(f"unzip {dataset_zip_path} -d {os.path.join(project_dir, 'dataset')}")
 
+
 def make_multi_channel_tiff(project_dir):
     marker_image_dir = os.path.join(project_dir, "dataset", "cHL_CODEX", "raw_image")
     os.makedirs(os.path.join(project_dir, "dataset", "multiplex_images"), exist_ok=True)
     if not os.path.exists(marker_image_dir):
         print("Raw image directory does not exist.")
         print("Downloading dataset...")
-        download_dataset(project_dir)
+        download_crc_maps_shaban_dataset(project_dir)
     marker_images_list = os.listdir(marker_image_dir)
     marker_images_list = [img for img in marker_images_list if img.endswith('.tiff')]
     marker_images_list.sort()
@@ -76,6 +79,7 @@ def make_multi_channel_tiff(project_dir):
     else:
         print("Error: The loaded image is not a multi-dimensional array.")
 
+
 def copy_cell_mask_file(project_dir):
     """
     Copies the cell mask file to the project directory.
@@ -89,6 +93,7 @@ def copy_cell_mask_file(project_dir):
         os.makedirs(os.path.dirname(des_cell_mask_file_path), exist_ok=True)
         shutil.copy(src_cell_mask_file_path, des_cell_mask_file_path)
         print(f"Cell mask file copied to {des_cell_mask_file_path}")
+
 
 def extract_cell_annotations(project_dir):
     """
@@ -114,13 +119,14 @@ def extract_cell_annotations(project_dir):
     print(f"Total number of cells after filtering out segmentation artifacts and merging Cytotoxic CD8 to CD8: {len(annotations_df)}")
     print("Cell annotations extracted and saved to dataset/cell_annotations.csv")
 
-def download_and_prepare_dataset(project_dir):
+
+def download_and_prepare_crc_maps_dataset(project_dir):
     """
     Downloads and prepares the CRC dataset by creating multi-channel TIFF images, copying cell mask files,
     and extracting cell annotations.
     """
     try:
-        download_dataset(project_dir)
+        download_crc_maps_shaban_dataset(project_dir)
     except Exception as e:
         print(f"Error in download_dataset: {e}")
         return

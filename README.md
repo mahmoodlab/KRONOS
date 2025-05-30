@@ -56,11 +56,11 @@ py -m venv kronos
 ```
 ### Step 2. Install KRONOS
 ``` shell
-git clone https://github.com/mahmoodlab/KRONOS.git
-pip install -e ./KRONOS
+git clone https://github.com/mahmoodlab/KRONOS.git && cd KRONOS
+pip install -e .
 
-# run following command to install packages required for running the tutorials
-pip install -r requirements.txt
+# run this command to install packages required for running tutorials
+pip install -e .[tutorials]
 ```
 
 
@@ -77,7 +77,9 @@ print("Model embedding dimension: ", embedding_dim)
 ```
 
 ### Step 4. Process a multiplex images
-Here we provide an example of how to process a batch of dummy multiplex images with 10 markers.
+
+We provide an example of to process a batch of dummy multiplex images with 10 markers. Refer to the tutorials for full-scale examples. 
+
 ```python
 import torch
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')

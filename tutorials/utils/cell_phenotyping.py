@@ -22,7 +22,7 @@ warnings.filterwarnings('ignore')
 
 from matplotlib import pyplot as plt
 from tifffile import TiffFile
-from sklearn.preprocessing import Normalizer, StandardScaler
+from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import f1_score, balanced_accuracy_score, average_precision_score, roc_auc_score
 
