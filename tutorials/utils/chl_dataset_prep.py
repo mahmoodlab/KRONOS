@@ -1,5 +1,5 @@
 """
-This script downloads the CRC dataset (MAPS, Shaban et al.), prepares multi-channel TIFF images, copies cell mask files,
+This script downloads the cHL dataset (MAPS, Shaban et al.), prepares multi-channel TIFF images, copies cell mask files,
 and extracts cell annotations.
 """
 
@@ -12,9 +12,9 @@ import shutil
 import requests
 
 
-def download_crc_maps_shaban_dataset(project_dir):
+def download_chl_maps_shaban_dataset(project_dir):
     """
-    Downloads CRC dataset (MAPS, Shaban et al.) from Zenodo and saves it to the project dir.
+    Downloads cHL dataset (MAPS, Shaban et al.) from Zenodo and saves it to the project dir.
     
     Paper: Pathologist-level Cell Type Annotation from Tissue Images through Machine Learning (Shaban et al., Nat. Comms.)
     Link: https://zenodo.org/records/10067010
@@ -54,7 +54,7 @@ def make_multi_channel_tiff(project_dir):
     if not os.path.exists(marker_image_dir):
         print("Raw image directory does not exist.")
         print("Downloading dataset...")
-        download_crc_maps_shaban_dataset(project_dir)
+        download_chl_maps_shaban_dataset(project_dir)
     marker_images_list = os.listdir(marker_image_dir)
     marker_images_list = [img for img in marker_images_list if img.endswith('.tiff')]
     marker_images_list.sort()
@@ -120,13 +120,13 @@ def extract_cell_annotations(project_dir):
     print("Cell annotations extracted and saved to dataset/cell_annotations.csv")
 
 
-def download_and_prepare_crc_maps_dataset(project_dir):
+def download_and_prepare_chl_maps_dataset(project_dir):
     """
-    Downloads and prepares the CRC dataset by creating multi-channel TIFF images, copying cell mask files,
+    Downloads and prepares the cHL dataset by creating multi-channel TIFF images, copying cell mask files,
     and extracting cell annotations.
     """
     try:
-        download_crc_maps_shaban_dataset(project_dir)
+        download_chl_maps_shaban_dataset(project_dir)
     except Exception as e:
         print(f"Error in download_dataset: {e}")
         return
@@ -148,4 +148,4 @@ def download_and_prepare_crc_maps_dataset(project_dir):
     except Exception as e:
         print(f"Error in extract_cell_annotations: {e}")
         return
-    print("CRC dataset preparation completed successfully.")
+    print("cHL dataset preparation completed successfully.")
