@@ -492,7 +492,7 @@ class CellPhenotyping:
 
                 # Extract cell ID and the x, y coordinates of the cell center
                 cell_id = row["cell_id"]
-                x, y = row["x_center"], row["y_center"]
+                x, y = row["y_center"], row["x_center"] 
                 
                 # Calculate the patch boundaries, ensuring they stay within the image dimensions
                 x1 = (x - (patch_size // 2)) if (x - (patch_size // 2)) >= 0 else 0
@@ -1053,3 +1053,4 @@ class CellPhenotyping:
             plt.xticks([])
             plt.yticks([i+0.5 for i in range(len(class_names))], class_names[::-1])
             plt.title("Phenotypes")
+            

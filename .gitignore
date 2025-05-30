@@ -4,3 +4,5 @@ KRONOS.egg-info/
 model_assets/
 tutorials/notebook.ipynb
 docs/joint_logo_1.ai
+__pycache__/ca_mea.cpython-312.pyc
+.vscode/launch.json
