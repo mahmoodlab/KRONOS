@@ -1,7 +1,7 @@
 KRONOS 
 ===========
 ## A Foundation Model for Spatial Proteomics 
-[`Preprint`](https://arxiv.org/abs/2506.03373) |[`Download Model`](https://huggingface.co/MahmoodLab/kronos) | [`Blog (from Shaban)`](#Reference)| [`Blog (from Sizun)`](#Reference)|  [`Cite`](#Reference) |  [`Namesake`](#why-is-kronos-called-kronos) <br>
+[`Preprint`](https://arxiv.org/abs/2506.03373) |[`Download Model`](https://huggingface.co/MahmoodLab/kronos) | [`Blog (from Shaban)`](https://www.linkedin.com/feed/update/urn:li:ugcPost:7336414864736677889/)| [`Blog (from Sizun)`](https://www.linkedin.com/feed/update/urn:li:activity:7336419667005116416/)|  [`Cite`](#Reference) |  [`Namesake`](#why-is-kronos-called-kronos) <br>
 <img src="docs/kronos_1.jpg"  width="250px" align="right"/>
 
 **KRONOS** is a **panel-agnostic foundation model for spatial proteomics**, self-supervised on 47 million single-marker patches spanning 175 protein markers, 16 tissue types, 8 imaging platforms and 5 institutions. Its architecture couples a *shared channel-wise stem* with *sinusoidal marker-identity embeddings*, making it natively compatible with high-dimensional multiplex data.
