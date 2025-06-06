@@ -51,7 +51,7 @@ Search and retrieve tissue samples with similar phenotypic or spatial patterns u
 
 🧪 **Patient Stratification**  
 Use KRONOS embeddings for downstream analysis such as treatment response prediction and patient subgroup discovery.  
-👉 *Tutorial: Coming soon*
+👉 [**Tutorial: Patient Stratification**](https://github.com/mahmoodlab/KRONOS/blob/main/tutorials/7%20-%20Patient-stratification.ipynb)
 
 
 <!-- 
