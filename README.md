@@ -133,13 +133,15 @@ batch = torch.randn(batch_size, marker_count, patch_size, patch_size).to(device)
 # see marker_metadata.csv for actual mean and std values for each marker ids
 mean = torch.randn(marker_count).to(device)
 std = torch.randn(marker_count).to(device)
+# generate dummy marker ids, see marker_metadata.csv for the actual marker ids.
+marker_ids = torch.randint(4, 512, (batch_size, marker_count), dtype=torch.int64).to(device)
 
 # normalizing the batch
 batch = (batch - mean[None, :, None, None]) / std[None, :, None, None]
 
 # feature extraction
 with torch.no_grad():
-    patch_embeddings, marker_embeddings, token_embeddings = model(batch)
+    patch_embeddings, marker_embeddings, token_embeddings = model(batch, marker_ids=marker_ids)
 
 print(f'Patch embeddings: {patch_embeddings.shape}')
 print(f'Marker embeddings: {marker_embeddings.shape}')
