@@ -4,9 +4,10 @@ KRONOS
 [`Preprint`](https://arxiv.org/abs/2506.03373) |[`Download Model`](https://huggingface.co/MahmoodLab/kronos) | [`Blog (from Shaban)`](https://www.linkedin.com/pulse/kronos-foundation-model-spatial-proteomics-muhammad-shaban-hioge/)| [`Blog (from Sizun)`](https://www.linkedin.com/pulse/spatial-proteomics-gets-foundation-model-kronos-sizun-jiang-mp0xf/)|  [`Cite`](#Reference) |  [`Namesake`](#why-is-kronos-called-kronos) <br>
 <img src="docs/kronos_1.jpg"  width="250px" align="right"/>
 
-**(072726) CORAL announced!** [CORAL](https://github.com/mahmoodlab/CORAL) is a end-to-end spatial proetomics toolkit that is foundation-model centric. It can seemlessly load KRONOS2, KRONOS, and other spatial proteomics foundation models.
-**(072726) KRONOSv2 announced!** Please visit [KRONOS2](https://huggingface.co/MahmoodLab/KRONOS2) for the next iteration of the KRONOS model.
-**(041926) KRONOSv2 is coming soon!** Please sign up for the waiting list by requesting access at [HF repo](https://huggingface.co/MahmoodLab/KRONOSv2)!
+### Updates
+- **(072726) CORAL announced!** [CORAL](https://github.com/mahmoodlab/CORAL) is a end-to-end spatial proetomics toolkit that is foundation-model centric. It seamlessly loads KRONOS2, KRONOS, and other spatial proteomics foundation models for downstream tasks across the spatial scales.
+- **(072726) KRONOSv2 announced!** Please visit [KRONOS2](https://huggingface.co/MahmoodLab/KRONOS2) for the next iteration of the KRONOS model.
+- **(041926) KRONOSv2 is coming soon!** Please sign up for the waiting list by requesting access at [HF repo](https://huggingface.co/MahmoodLab/KRONOSv2)!
 
 **KRONOS** is a **panel-agnostic foundation model for spatial proteomics**, self-supervised on 47 million single-marker patches spanning 175 protein markers, 16 tissue types, 8 imaging platforms and 5 institutions. Its architecture couples a *shared channel-wise stem* with *sinusoidal marker-identity embeddings*, making it natively compatible with high-dimensional multiplex data.
 
